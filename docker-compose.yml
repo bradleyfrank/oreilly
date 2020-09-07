@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: postgres:9.6
+    container_name: postgres
+    restart: always
+    networks:
+      - oreilly
+    environment:
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_USER: "${POSTGRES_USER}"
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    networks:
+      - oreilly
+    ports:
+      - 8080:8080
+
+  app:
+    image: oreilly:latest
+    container_name: oreilly
+    restart: always
+    networks:
+      - oreilly
+    environment:
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_USER: "${POSTGRES_USER}"
+
+networks:
+  oreilly:
