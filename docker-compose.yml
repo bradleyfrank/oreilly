@@ -22,7 +22,7 @@ services:
       - 8080:8080
 
   app:
-    image: oreilly:latest
+    image: docker.pkg.github.com/bradleyfrank/oreilly/oreilly:latest
     container_name: oreilly
     restart: always
     networks:
