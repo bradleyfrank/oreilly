@@ -1,2 +1,1 @@
-# oreilly
-Assignment for O'Reilly
+Testing PostgreSQL Python integration with psycop2.
